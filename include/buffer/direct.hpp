@@ -57,7 +57,7 @@ protected: // internal methods
 				assert(this->gptr() == id(this)->data()
 				       && "Get pointer must at beginning of holding area if not empty");
 
-				*s++ = this->sbumpc(); // get one char, we know one exists
+				*s++ = char(this->sbumpc()); // get one char, we know one exists
 				--count;
 
 				if(count == 0) { // no need for read
@@ -88,7 +88,7 @@ protected: // internal methods
 					ret = Traits::eof();
 				}
 			}
-			ret = Traits::to_int_type(ch);
+			ret = ch;
 		}).else_([&] (auto&& id) {
 			ret = id(this)->super::overflow(ch);
 		});

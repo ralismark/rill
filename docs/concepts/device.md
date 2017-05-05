@@ -8,12 +8,20 @@ the abstracted data stream.
 ## Notation
 
 - `T`, a type which models `Source`
+- `dev`, an object of type `T`
 - `Ch`, the underlying character type of `T`
 
 ## Valid Expressions / Semantics
 
 - `typename T::char_type`
 	- Is the same as `Ch`
+
+## Exceptions
+
+Member functions specified by concepts throw exceptions to indicate errors
+during their execution. After an exception, `dev` must be in a consistent state;
+further calls to specified member functions may throw, but must have
+well-defined behaviour.
 
 ## Example
 

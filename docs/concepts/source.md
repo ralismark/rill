@@ -24,10 +24,8 @@ This is done by defining a member function `read`.
 
 ## Exceptions
 
-Errors which occur during execution of `read` are indicated by throwing an
-exception. Reaching the end of the sequence is not an error. After an exception
-is thrown, `src` must be in a consistent state; further calls to `read` may
-throw, but must have well-defined behaviour.
+Errors are indicated by throwing an exception, as specified by `Device`.
+Attempting to write past the end of the sequence is not an error.
 
 ## Example
 

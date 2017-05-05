@@ -23,10 +23,8 @@ outputted to a data stream. This is done by defining a member function `read`.
 
 ## Exceptions
 
-Errors which occur during the execution of `write` are reported by throwing an
-exception. Reaching the end of the output sequence is not an error. After an
-exception is thrown, `src` must be in a consistent state; further calls may
-throw, but must have well-defined behaviour.
+Errors are indicated by throwing an exception, as specified by `Device`.
+Reaching the end of the output sequence is not an error.
 
 ## Example
 
